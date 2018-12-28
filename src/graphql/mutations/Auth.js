@@ -18,7 +18,7 @@ const loginUser = async (obj, { email, password }) => {
     }
   }
 
-  const valid = await bcrypt.compare(password, team.password)
+  const valid = await bcrypt.compare(password, user.password)
 
   if (!valid) {
     return {

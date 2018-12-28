@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 
 const knexfile = require('./knexfile')
-const User = require('./src/models/user')
+const User = require('./src/models/User')
 const schema = require('./src/graphql')
 const { tokenSecret, port } = require('./config')
 

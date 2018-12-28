@@ -1,5 +1,5 @@
 {
-  "name": "tackle-als-api",
+  "name": "bootcamp-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,7 +34,8 @@
     "start": "node index.js",
     "reset": "node index.js --force",
     "copy-env": "cp sample.env .env",
-    "setup-db": "createdb aalum"
+    "setup-db": "createdb bootcampproject",
+    "db": "psql -U admin postgres"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

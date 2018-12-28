@@ -7,6 +7,13 @@ createdb bootcampproject
 npm run copy-env
 ```
 
+In a separate terminal, run
+
+```bash
+npm run db
+bootcampproject=# \i config/script.sql
+```
+
 ## Run
 
 ```bash

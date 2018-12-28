@@ -1,6 +1,4 @@
 const BaseModel = require('./BaseModel')
-const Post = require('./Post')
-const Hobby = require('./Hobby')
 const { HasManyRelation, ManyToManyRelation } = require('objection')
 
 class User extends BaseModel {
@@ -9,6 +7,8 @@ class User extends BaseModel {
   }
 
   static get relationMappings() {
+    const Post = require('./Post')
+    const Hobby = require('./Hobby')
     return {
       posts: {
         relation: HasManyRelation,

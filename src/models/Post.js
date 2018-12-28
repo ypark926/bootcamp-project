@@ -1,5 +1,4 @@
 const BaseModel = require('./BaseModel')
-const User = require('./User')
 const { BelongsToOneRelation } = require('objection')
 
 class Post extends BaseModel {
@@ -8,6 +7,8 @@ class Post extends BaseModel {
   }
 
   static get relationMappings() {
+    const User = require('./User')
+
     return {
       posts: {
         relation: BelongsToOneRelation,

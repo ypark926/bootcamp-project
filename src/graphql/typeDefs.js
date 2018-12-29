@@ -15,7 +15,19 @@ module.exports = gql`
 
   type Mutation {
     createUser(input: CreateUserInput!): LoginReturn!
+    createPost(content: String!): CreatePostReturn!
+    editPost(id: ID!, newContent: String!): EditPostReturn!
     loginUser(email: String!, password: String!): LoginReturn!
+  }
+
+  type CreatePostReturn {
+    post: Post
+    error: Error
+  }
+
+  type EditPostReturn {
+    post: Post
+    error: Error
   }
 
   input CreateUserInput {

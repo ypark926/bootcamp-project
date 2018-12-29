@@ -83,7 +83,7 @@ You should go about doing this in the following manner. If you need help with sy
 
 Complete functions which take advantage of Objection.js functionality to query for various kinds of data.
 
-Implement the functions marked as TODO in `/src/graphql/types/user` and `/src/graphql/types/post` as per the specifications given therein.
+Implement the functions marked as TODO in `/src/graphql/types/user`, `/src/graphql/types/post`, and `src/graphql/mutations/Post` as per the specifications given therein.
 
 Refer to the Knex documentation and lecture code for syntactical clarifications: https://knexjs.org/
 

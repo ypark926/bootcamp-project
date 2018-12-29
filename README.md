@@ -26,6 +26,12 @@ npm run start
 npx knex migrate:make <MIGRATION_NAME>
 ```
 
+## Seed with mock data
+
+```bash
+npx knex seed:run
+```
+
 ## Walkthrough
 
 ### Stage 1

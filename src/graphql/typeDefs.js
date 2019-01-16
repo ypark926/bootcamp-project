@@ -9,6 +9,7 @@ module.exports = gql`
       house: String
       concentration: String
     ): [User!]
+    
     post(id: ID!): Post!
     posts: [Post!]
   }
@@ -16,7 +17,7 @@ module.exports = gql`
   type Mutation {
     createUser(input: CreateUserInput!): LoginReturn!
     createPost(content: String!): CreatePostReturn!
-    editPost(id: ID!, newContent: String!): EditPostReturn!
+    editPost(id: ID!, newContent: String!: EditPostReturn!
     loginUser(email: String!, password: String!): LoginReturn!
   }
 
@@ -52,6 +53,7 @@ module.exports = gql`
     id: ID!
     name: String!
     email: String!
+    password: String!
     birthday: String
     concentration: String
     hometown: String

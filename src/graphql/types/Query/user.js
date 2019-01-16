@@ -2,6 +2,7 @@ const User = require('../../../models/User')
 
 const userResolver = async (obj, args, context) => {
   // TODO: Write a resolver which returns a user given a user id.
+  return user.query().where
 }
 
 const usersResolver = async (obj, args, context) => {

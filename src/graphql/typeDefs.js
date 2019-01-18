@@ -9,28 +9,23 @@ module.exports = gql`
       house: String
       concentration: String
     ): [User!]
-    
     post(id: ID!): Post!
     posts: [Post!]
   }
-
   type Mutation {
     createUser(input: CreateUserInput!): LoginReturn!
-    createPost(content: String!): CreatePostReturn!
-    editPost(id: ID!, newContent: String!: EditPostReturn!
+    createPost(content: String!, userId: ID!): CreatePostReturn!
+    editPost(id: ID!, newContent: String!): EditPostReturn!
     loginUser(email: String!, password: String!): LoginReturn!
   }
-
   type CreatePostReturn {
     post: Post
     error: Error
   }
-
   type EditPostReturn {
     post: Post
     error: Error
   }
-
   input CreateUserInput {
     name: String!
     email: String!
@@ -44,16 +39,13 @@ module.exports = gql`
     picture: String
     hobbies: [HobbyInput!]
   }
-
   input HobbyInput {
     hobby: String!
   }
-
   type User {
     id: ID!
     name: String!
     email: String!
-    password: String!
     birthday: String
     concentration: String
     hometown: String
@@ -61,19 +53,22 @@ module.exports = gql`
     gender: String
     bio: String
     picture: String
+    posts: [Post!]
+    hobbies: [Hobby!]
   }
-
   type Post {
     id: ID!
     content: String!
   }
-
+  type Hobby {
+    id: ID!
+    hobby: String!
+  }
   type LoginReturn {
     user: User
     token: String
     error: Error
   }
-
   type Error {
     message: String
   }

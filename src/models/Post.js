@@ -10,7 +10,7 @@ class Post extends BaseModel {
     const User = require('./User')
 
     return {
-      posts: {
+      user: {
         relation: BelongsToOneRelation,
         modelClass: User,
         join: {

@@ -1,4 +1,5 @@
 const User = require('../../models/User')
+const Post = require('../../models/Post')
 
 const createPost = async (obj, { content }, context) => {
   if (!context.user) {
@@ -41,9 +42,12 @@ const editPost = async (obj, args, context) => {
       },
     }
   }
+
+  const newPost = await Post.query().patchAndFetchById(id, {content: newContent})
+  return {post: newPost}
   // TODO - finish this function which edits a post given its id and new content.
 }
 
-const resolver = { Mutation: { createPost } }
+const resolver = { Mutation: { createPost, editPost } }
 
 module.exports = resolver
